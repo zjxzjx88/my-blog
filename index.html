@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人 Blog - 首页</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: url('./005GezDWgy1huhy5znorij33b04eob2e.jpg') no-repeat center center fixed;
+            background-size: cover;
+            /* 添加方正舒体字体和白色文字颜色 */
+            font-family: "方正舒体", "STKaiti", "KaiTi", serif;
+            color: #ffffff;
+        }
+
+        .ink-bg {
+            background: rgba(255, 255, 255, 0.295);
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb;
+        }
+
+        .ink-title {
+            font-family: "方正舒体", "STKaiti", "KaiTi", serif;
+            /* 更新标题字体 */
+            letter-spacing: 0.1em;
+            color: #ffffff;
+            /* 将标题颜色改为白色 */
+            text-shadow: 0 2px 8px #000000;
+            /* 调整阴影以突出白色文字 */
+        }
+
+        .ink-btn {
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+
+        .ink-btn:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        /* 覆盖 Tailwind 的文字颜色类，使其更亮 */
+        .text-gray-600 {
+            color: #cccccc !important;
+        }
+
+        .text-gray-500 {
+            color: #dddddd !important;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-center py-8">
+    <!-- 顶部标题 -->
+    <div class="mb-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold ink-title">个人 Blog</h1>
+        <p class="mt-2 text-gray-600">记录生活</p>
+    </div>
+    <!-- 功能入口区块 -->
+    <div class="grid grid-cols-2 gap-6 w-full max-w-xl">
+        <!-- 文章列表 -->
+        <a href="articles.html" class="ink-bg ink-btn flex flex-col items-center p-6">
+            <i class="fa-solid fa-book-open text-3xl text-blue-500 mb-2"></i>
+            <span class="text-lg font-semibold">文章列表</span>
+            <span class="text-xs text-gray-500 mt-1">浏览全部博文</span>
+        </a>
+        <!-- 写作发布 -->
+        <a href="write.html" class="ink-bg ink-btn flex flex-col items-center p-6">
+            <i class="fa-solid fa-pen-nib text-3xl text-green-500 mb-2"></i>
+            <span class="text-lg font-semibold">写作发布</span>
+            <span class="text-xs text-gray-500 mt-1">记录灵感与思考</span>
+        </a>
+        <!-- 我的收藏 -->
+        <a href="favorites.html" class="ink-bg ink-btn flex flex-col items-center p-6">
+            <i class="fa-solid fa-heart text-3xl text-pink-500 mb-2"></i>
+            <span class="text-lg font-semibold">我的收藏</span>
+            <span class="text-xs text-gray-500 mt-1">珍藏喜欢的内容</span>
+        </a>
+        <!-- 个人资料 -->
+        <a href="profile.html" class="ink-bg ink-btn flex flex-col items-center p-6">
+            <i class="fa-solid fa-user text-3xl text-yellow-500 mb-2"></i>
+            <span class="text-lg font-semibold">个人资料</span>
+            <span class="text-xs text-gray-500 mt-1">查看与编辑信息</span>
+        </a>
+    </div>
+    <!-- 页脚 -->
+    <footer class="mt-12 text-gray-400 text-xs">
+        © 2024 个人 Blog
+    </footer>
+</body>
+
+</html>

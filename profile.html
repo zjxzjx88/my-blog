@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人资料 - 个人 Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 基础样式 */
+        body {
+            /* 将背景图片替换为新的 Unsplash 图片链接 */
+            background: url('./005GezDWgy1huhy5znorij33b04eob2e.jpg') no-repeat center center fixed;
+            /* 示例：替换为一张水墨风格或简约风景图 */
+            background-size: cover;
+            font-family: "方正舒体", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; /* 添加方正舒体字体 */
+            color: #ffffff; /* 将文字颜色改为白色 */
+            line-height: 1.6;
+        }
+
+        .ink-bg {
+
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb2c;
+        }
+
+        .ink-title {
+            font-family: "方正舒体", "STKaiti", "KaiTi", serif; /* 更新标题字体 */
+            letter-spacing: 0.1em;
+            color: #ffffff; /* 将标题颜色改为白色 */
+            text-shadow: 0 2px 8px #000000; /* 调整阴影以突出白色文字 */
+        }
+
+        .ink-btn {
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+
+        .ink-btn:hover {
+            background: #e0e7ef2f;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+        }
+
+        .form-input {
+            border-radius: 0.75rem;
+            border: 1px solid #e5e7eb31;
+            background: #f9fafb1f;
+            padding: 0.75rem 1rem;
+            width: 100%;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            outline: none;
+            transition: border 0.2s;
+            color: #333; /* 确保输入框内的文字颜色可见 */
+        }
+
+        .form-input:focus {
+            border-color: #60a5fa;
+        }
+
+        /* 音乐播放器样式 */
+        .audio-player {
+            width: 100%;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.192);
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 覆盖 Tailwind 的文字颜色类，使其更亮 */
+        .text-gray-600 {
+            color: #cccccc !important;
+        }
+
+        .text-gray-800 {
+            color: #eeeeee !important;
+        }
+
+        .text-gray-700 {
+            color: #dddddd !important;
+        }
+
+        .text-green-600 {
+            color: #9ae6b4 !important; /* 调整成功提示颜色 */
+        }
+
+        .text-gray-500 {
+            color: #dddddd !important;
+        }
+    </style>
+    <script>
+        function showProfileTip() {
+            document.getElementById('profile-tip').classList.remove('hidden');
+            setTimeout(function () {
+                document.getElementById('profile-tip').classList.add('hidden');
+            }, 1800);
+        }
+    </script>
+</head>
+
+<body class="min-h-screen flex flex-col items-center py-8 px-4">
+    <!-- 顶部返回与标题 -->
+    <div class="flex items-center w-full max-w-xl mb-8 animate-fadeIn" style="animation-delay: 0.1s;">
+        <a href="index.html" class="text-gray-600 hover:text-blue-600 mr-4 transition-colors duration-200"><i
+                class="fa-solid fa-chevron-left"></i>
+            返回</a>
+        <h2 class="text-3xl font-bold ink-title flex-1 text-center">个人资料</h2>
+        <span class="w-12"></span> <!-- 占位符 -->
+    </div>
+
+    <!-- 资料展示与编辑区块 -->
+    <div class="ink-bg w-full max-w-xl p-8 animate-fadeIn" style="animation-delay: 0.2s;">
+        <div class="flex flex-col items-center mb-8">
+            <img src="" class="w-28 h-28 rounded-full mb-4 border-4 border-white shadow-lg"> <!-- 调整头像样式 -->
+            <div class="text-xl font-semibold text-gray-800">小明</div> <!-- 调整字体大小和颜色 -->
+            <div class="text-sm text-gray-600 mt-1">记录生活的博主</div> <!-- 调整字体大小和颜色 -->
+        </div>
+
+        <form onsubmit="showProfileTip();return false;">
+            <div class="mb-4 animate-fadeIn" style="animation-delay: 0.3s;">
+                <label class="block mb-2 text-gray-700 font-semibold">昵称</label>
+                <input type="text" class="form-input" value="小明" required>
+            </div>
+            <div class="mb-4 animate-fadeIn" style="animation-delay: 0.4s;">
+                <label class="block mb-2 text-gray-700 font-semibold">简介</label>
+                <input type="text" class="form-input" value="记录生活的博主">
+            </div>
+            <div class="mb-6 animate-fadeIn" style="animation-delay: 0.5s;">
+                <label class="block mb-2 text-gray-700 font-semibold">头像图片链接</label>
+                <input type="url" class="form-input"
+                    value="https://images.unsplash.com/photo-1535713875002-d1d0cfc37fa9?auto=format&fit=facearea&w=128&h=128&q=80">
+                <!-- 更新示例头像链接 -->
+            </div>
+
+            <button type="submit"
+                class="ink-btn bg-green-500 text-white px-8 py-3 rounded-full font-semibold w-full text-lg animate-fadeIn"
+                style="animation-delay: 0.6s;">保存修改</button> <!-- 调整按钮样式 -->
+        </form>
+
+        <div id="profile-tip" class="hidden mt-6 text-green-600 text-center font-semibold animate-fadeIn"
+            style="animation-delay: 0.7s;">保存成功！（仅原型演示）</div>
+    </div>
+
+
+    <!-- 页脚 -->
+    <footer class="mt-12 text-gray-500 text-sm animate-fadeIn" style="animation-delay: 0.9s;"> <!-- 调整页脚样式 -->
+        © 2024 个人 Blog 
+    </footer>
+</body>
+
+</html>

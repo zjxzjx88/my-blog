@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的收藏 - 个人 Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: url('./005GezDWgy1huhy5znorij33b04eob2e.jpg') no-repeat center center fixed;
+            background-size: cover;
+            /* 添加方正舒体字体和白色文字颜色 */
+            font-family: "方正舒体", "STKaiti", "KaiTi", serif;
+            color: #ffffff;
+        }
+
+        .ink-bg {
+
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb;
+        }
+
+        .ink-title {
+            font-family: "方正舒体", "STKaiti", "KaiTi", serif;
+            /* 更新标题字体 */
+            letter-spacing: 0.1em;
+            color: #ffffff;
+            /* 将标题颜色改为白色 */
+            text-shadow: 0 2px 8px #000000;
+            /* 调整阴影以突出白色文字 */
+        }
+
+        .article-card:hover {
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+        }
+
+        .article-cover {
+            border-radius: 1rem;
+            object-fit: cover;
+            height: 100px;
+            width: 100%;
+        }
+
+        .unfav-btn {
+            transition: color 0.2s;
+        }
+
+        .unfav-btn:hover {
+            color: #e11d48;
+        }
+
+        /* 覆盖 Tailwind 的文字颜色类，使其更亮 */
+        .text-gray-500 {
+            color: #dddddd !important;
+        }
+
+        .text-blue-500 {
+            color: #90cdf4 !important;
+            /* 调整链接颜色 */
+        }
+    </style>
+    <script>
+        function removeFavorite(btn) {
+            btn.closest('.article-card').style.display = 'none';
+        }
+    </script>
+</head>
+
+<body class="min-h-screen flex flex-col items-center py-8">
+    <!-- 顶部返回与标题 -->
+    <div class="flex items-center w-full max-w-xl mb-6">
+        <a href="index.html" class="text-gray-500 hover:text-blue-500 mr-4"><i class="fa-solid fa-chevron-left"></i>
+            返回</a>
+        <h2 class="text-2xl font-bold ink-title flex-1 text-center">我的收藏</h2>
+        <span class="w-12"></span>
+    </div>
+    <!-- 收藏文章卡片列表 -->
+    <div class="w-full max-w-xl space-y-6">
+        <!-- 示例收藏卡片1 -->
+        <div class="ink-bg article-card p-4 flex items-center transition-all">
+
+            <div class="flex-1">
+                <h3 class="text-lg font-semibold mb-1">江南的清晨</h3>
+                <p class="text-xs text-gray-500 mb-2">2024-06-01 · by 小明</p>
+                <a href="article-detail.html" class="text-blue-500 text-xs">查看详情</a>
+            </div>
+            <button class="ml-4 unfav-btn" title="取消收藏" onclick="removeFavorite(this)"><i
+                    class="fa-solid fa-heart-crack text-2xl"></i></button>
+        </div>
+        <!-- 示例收藏卡片2 -->
+        <div class="ink-bg article-card p-4 flex items-center transition-all">
+
+            alt="cover" class="article-cover mr-4">
+            <div class="flex-1">
+                <h3 class="text-lg font-semibold mb-1">随笔：夏日午后</h3>
+                <p class="text-xs text-gray-500 mb-2">2024-05-28 · by 小红</p>
+                <a href="article-detail.html" class="text-blue-500 text-xs">查看详情</a>
+            </div>
+            <button class="ml-4 unfav-btn" title="取消收藏" onclick="removeFavorite(this)"><i
+                    class="fa-solid fa-heart-crack text-2xl"></i></button>
+        </div>
+        <!-- 更多收藏可继续添加 -->
+    </div>
+    <!-- 页脚 -->
+    <footer class="mt-12 text-gray-400 text-xs">
+        © 2024 个人 Blog
+    </footer>
+</body>
+
+</html>
